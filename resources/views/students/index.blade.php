@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.index')
 
 @section('content')
 
@@ -14,11 +14,8 @@
      	</div>
      </div>
  </div>
-	</div>
 </div>
-
-
-
+</div>
 <div class="panel-body">
 	<table class="table table-striped table-hover">
 	<thead>

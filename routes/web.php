@@ -1,3 +1,4 @@
+
 <?php
 
 /*
@@ -11,10 +12,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/','inicio');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/inicio', 'web\InicioController@inicio')->name('inicio');
+
+
+
+Route::resource('students', 'StudentController');

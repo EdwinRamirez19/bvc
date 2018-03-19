@@ -21,3 +21,4 @@ Route::get('/inicio', 'web\InicioController@inicio')->name('inicio');
 
 
 Route::resource('students', 'StudentController');
+

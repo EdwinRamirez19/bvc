@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Student;
+use App\http\request\StudentStoreRequest;
+use App\http\request\StudentUpdateRequest;
 class StudentController extends Controller
 {
     
@@ -37,9 +39,11 @@ class StudentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StudentStoreRequest $request)
     {
-        //
+        $student = Student::create($request->all());
+        return redirect()->route('students.edit',$student->id)
+            ->witd('info','Estudiante Creado con Exito');
     }
 
     /**
@@ -50,7 +54,8 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        //
+        $student = Student::find($id);
+        return view('students.show',compact('student'));
     }
 
     /**
@@ -61,7 +66,8 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $student = Student::find($id);
+        return view('students.edit',compact('student'));
     }
 
     /**
@@ -71,9 +77,12 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StudentUpdateRequest $request, $id)
     {
-        //
+        $student = Student::find($id);
+        $student->fill($request->all())->save();
+
+        return redirect()->route('students.edit',$student->id)->with('info','Estudiante Actualizado con éxito');
     }
 
     /**
@@ -84,6 +93,8 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Student::find($id)->delete();
+        return back()->with('info','Eliminado Correctamente');
+
     }
 }

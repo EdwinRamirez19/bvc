@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Student;
-use App\http\request\StudentStoreRequest;
-use App\http\request\StudentUpdateRequest;
+use App\Http\Requests\StudentStoreRequest;
+use App\Http\Requests\StudentUpdateRequest;
 class StudentController extends Controller
 {
     
@@ -42,7 +42,7 @@ class StudentController extends Controller
     {
         $student = Student::create($request->all());
 
-        return redirect()->route('students.edit',$student->id)
+        return redirect()->route('students.index',$student->id)
             ->with('info','Estudiante Creado con Exito');
     }
 

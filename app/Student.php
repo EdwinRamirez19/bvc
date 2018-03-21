@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     protected $table = 'students';
-    protected $primary_key = 'id';
+    protected $primarykey = 'id';
     public $incrementing= false;
 }

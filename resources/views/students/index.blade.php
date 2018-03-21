@@ -1,4 +1,4 @@
-@extends('layouts.index')
+@extends('layouts.master')
 
 @section('content')
 
@@ -8,7 +8,7 @@
      <div class="panel panel-default">
      	<div class="panel-heading">
      		Listado de estudiantes
-     		<a href="{{route('students.create')}}" class="btn btn-sm btn-primary pull-right">
+     		<a href="{{ route('students.create') }}" class="btn btn-sm btn-primary pull-right">
      			Crear
      		</a> 
      	</div>
@@ -20,7 +20,6 @@
 	<table class="table table-striped table-hover">
 	<thead>
 		<tr>
-			
 			<th width="10px">id</th>
 			<th>Nombres</th>
 			<th>Apellidos</th>
@@ -28,10 +27,7 @@
 			<th>Nº Celular</th>
 			<th>Firma</th>
 			<th>Autorizacion Datos Personales</th>
-
-
 		</tr>
-
 	</thead>	
 	<tbody>
 		@foreach($students as $student)
@@ -46,12 +42,12 @@
         <td>{{$student->autizacion_uso_datos_personales_est}}</td>
 		</tr>
 		<td width="10px">
-			<a href="{{route('students.show', $student->id)}}" class="btn btn-sm btn-default">
+			<a href="{{ route('students.show', $student->id) }}" class="btn btn-sm btn-default">
 				Ver
 			</a>
 		</td>
 		<td width="10px">
-			<a href="{{route('students.edit', $student->id)}}" class="btn btn-sm btn-default">
+			<a href="{{ route('students.edit', $student->id) }}" class="btn btn-sm btn-default">
 				Editar
 			</a>
 		</td>

@@ -1,1 +1,5 @@
-create.blade.php
+@extends('layouts.master')
+
+@section('content')
+hola mundo
+@endsection

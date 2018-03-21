@@ -16,9 +16,8 @@ class StudentController extends Controller
 
     public function index()
     {
+        $students = Student::latest()->paginate(4);
 
-        $students = Student::orderBy('id','desc')->paginate(4);
-        //dd($students);
         return view('students.index', compact('students'));
         
     }
@@ -30,7 +29,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('students.create');
     }
 
     /**
@@ -42,8 +41,9 @@ class StudentController extends Controller
     public function store(StudentStoreRequest $request)
     {
         $student = Student::create($request->all());
+
         return redirect()->route('students.edit',$student->id)
-            ->witd('info','Estudiante Creado con Exito');
+            ->with('info','Estudiante Creado con Exito');
     }
 
     /**
@@ -55,7 +55,8 @@ class StudentController extends Controller
     public function show($id)
     {
         $student = Student::find($id);
-        return view('students.show',compact('student'));
+
+        return view('students.show', compact('student'));
     }
 
     /**
@@ -67,7 +68,8 @@ class StudentController extends Controller
     public function edit($id)
     {
         $student = Student::find($id);
-        return view('students.edit',compact('student'));
+
+        return view('students.edit', compact('student'));
     }
 
     /**
@@ -80,9 +82,10 @@ class StudentController extends Controller
     public function update(StudentUpdateRequest $request, $id)
     {
         $student = Student::find($id);
-        $student->fill($request->all())->save();
 
-        return redirect()->route('students.edit',$student->id)->with('info','Estudiante Actualizado con éxito');
+        $student->update($request->all());
+
+        return redirect()->route('students.edit', $student->id)->with('info','Estudiante Actualizado con éxito');
     }
 
     /**
@@ -94,6 +97,7 @@ class StudentController extends Controller
     public function destroy($id)
     {
         Student::find($id)->delete();
+
         return back()->with('info','Eliminado Correctamente');
 
     }

@@ -28,8 +28,7 @@
 <body class="@yield('class-page')">
     <div class="@yield('class-box')">
         <div class="logo">
-            <a href="javascript:void(0);">Admin<b>BSB</b></a>
-            <small>BVC SOFT</small>
+            <a href="javascript:void(0);" >Inicio de Sesion <b>BVC</b></a>
         </div>
         
 

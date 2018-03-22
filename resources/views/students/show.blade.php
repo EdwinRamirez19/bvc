@@ -2,14 +2,16 @@
 
 @section('content')
 
-<div class="row clearfix">
+                
+
+  <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
          <div class="card">
              <div class="header">
-				<a href=" {{route ('students.create') }}" class="btn  btn-info pull-right">Crear Estudiante</a>
+				<a href=" {{route ('students.index') }}" class="btn  btn-info pull-right">Atras</a>
                 <h2>
                  DATOS DEL ESTUDIANTE
-                    <small>Lista de forma general los datos del estudiante</small>
+                   
                 </h2>
             </div>
 		 <div class="body table-responsive">
@@ -26,7 +28,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                @foreach($students as $student)
+               
                     <tr>
                         <td>{{$student->id}}</td>
                         <td>{{$student->nombres_est}}</td>
@@ -36,30 +38,21 @@
                         <td>{{$student->firma_est}}</td>
                         <td>{{$student->autizacion_uso_datos_personales_est}}</td>
                                         
-                        <td width="10px">
-                             <a href="{{ route('students.show', $student->id) }}" class="btn btn-sm btn-primary">
-                                 Ver
-                            </a>
-                        </td>
+                       
                         <td width="10px">
                              <a href="{{ route('students.edit', $student->id) }}" class="btn btn-sm btn-teal">
                                  Editar
                             </a>
                         </td>
-                        <td width="10px">
-                            {!! Form::open(['route' => ['students.destroy', $student->id], 'method' => 'DELETE']) !!}
-                                        <button class="btn btn-sm btn-danger">
-                                            Eliminar
-                                        </button>                           
-                                    {!! Form::close() !!}
-                        </td>
+                       
                     </tr>
-                    @endforeach
+                   
                     </tbody>
                 </table>
-                {{$students->render()}}
+               
 			</div>
 		</div>
 	</div>
 </div>
+
 @endsection

@@ -112,7 +112,7 @@
                             </div>
                             <footer>
                             	
-                            	 <button type="summit" class="btn btn-success waves-effect">Guardar</button>
+                            	 <button type="summit" class="btn btn-primary waves-effect">Guardar</button>
                             	 <button type="button" class="btn btn-default" onclick="window.history.back();">
 									Cancelar
 								</button>

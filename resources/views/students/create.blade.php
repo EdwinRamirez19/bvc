@@ -27,6 +27,23 @@
                         	{{ method_field('POST') }}
 								{{ csrf_field() }}
                             <div class="row clearfix">
+
+
+                                 <div class="col-md-4">
+
+                                    <div class="input-group">
+
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">person</i>
+                                        </span>
+                                        <div class="form-line">
+                                            <input type="text" class="form-control date" placeholder="Nombres" id="id" name="id">
+                                            @foreach ($errors->get('nombres_est') as $message) 
+                                                    <div class="note note-error">{{ $message }}</div>
+                                                @endforeach
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="col-md-4">
 
                                     <div class="input-group">

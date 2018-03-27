@@ -15,6 +15,8 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_inquests')->unsigned();
+            $table->integer('id_schools')->unsigned();
             $table->string('nombres_est',100);
             $table->string('apellidos_est',100);
             $table->string('identificacion_est',20);
@@ -23,6 +25,15 @@ class CreateStudentsTable extends Migration
             $table->string('firma_est',50);
             $table->boolean('autizacion_uso_datos_personales_est',null);
             $table->timestamps();
+
+
+            $table->foreign('id_inquests')->references('id')->on('inquests')
+            ->onDelete()
+            ->onUpdate();
+
+            $table->foreign('id_schools')->references('id')->on('schools')
+            ->onDelete()
+            ->onUpdate();
 
         });
     }

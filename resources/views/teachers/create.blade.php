@@ -6,7 +6,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Crear Escuela
+                                Crear Docentes
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -24,7 +24,7 @@
 
                         <div class="body">
                            
-                            @include('schools.form')
+                            @include('teachers.form')
                         </div>
                     
                     </div>

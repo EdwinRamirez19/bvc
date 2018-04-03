@@ -8,7 +8,7 @@
              <div class="header">
 				<a href=" {{route ('teachers.create') }}" class="btn  btn-info pull-right">Crear Docente</a>
                 <h2>
-                 DATOS DE LA ESCUELA
+                 DATOS DEl DOCENTE
                     <small>Lista de forma general los datos de Docentes</small>
                 </h2>
             </div>

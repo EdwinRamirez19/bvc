@@ -14,53 +14,18 @@
             </a>
         </li>
         <li>
-            <li class="active">
-            <a href="{{ route('students.index') }}">
+            <li>
+            <a href="{{ route('schools.index') }}">
                 <i class="material-icons">home</i>
                 <span>INSTITUCIONES</span>
             </a>
         </li> 
         
         <li>
-            <a href="{{ route('students.index') }}">
+            <a href="{{ route('teachers.index') }}">
                 <i class="material-icons">info</i>
-                <span>EVENTOS</span>
+                <span>PROFESORES</span>
             </a>
-        </li> 
-
-        <li>
-            <a href="{{ route('students.index') }}">
-                <i class="material-icons">home</i>
-                <span>ENCUESTAS</span>
-            </a>
-        </li> 
-
-        <li>
-            <a href="{{ route('students.index') }}">
-                <i class="material-icons">home</i>
-                <span>ENCUESTAS</span>
-            </a>
-        </li> 
-
-        <li>
-            <a href="{{ route('students.index') }}">
-                <i class="material-icons">home</i>
-                <span>ENCUESTAS</span>
-            </a>
-        </li> 
-
-        <li>
-            <a href="{{ route('students.index') }}">
-                <i class="material-icons">home</i>
-                <span>ENCUESTAS</span>
-            </a>
-        </li> 
-
-        <li>
-            <a href="{{ route('students.index') }}">
-                <i class="material-icons">home</i>
-                <span>ENCUESTAS</span>
-            </a>
-        </li> 
+        </li>  
     </ul>
 </div>

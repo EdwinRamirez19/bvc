@@ -26,4 +26,5 @@
                            
                             @include('events.form')
                         </div>
+@endsection
                     

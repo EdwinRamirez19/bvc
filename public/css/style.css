@@ -7486,7 +7486,7 @@ fieldset[disabled] .form-control {
   -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   -ms-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 11 !important; }
+  z-index: 11 !important; } 
   .sidebar .legal {
     position: absolute;
     bottom: 0;
@@ -7503,7 +7503,7 @@ fieldset[disabled] .form-control {
       overflow: hidden; }
       .sidebar .legal .copyright a {
         font-weight: bold;
-        text-decoration: none; }
+        text-decoration: none; } 
     .sidebar .legal .version {
       white-space: nowrap;
       -ms-text-overflow: ellipsis;
@@ -7513,13 +7513,13 @@ fieldset[disabled] .form-control {
       margin-top: 5px;
       font-size: 13px; }
   .sidebar .user-info {
-    padding: 13px 15px 12px 15px;
+    padding: 13px 15px 12px 0px;
     white-space: nowrap;
     position: relative;
     border-bottom: 1px solid #e9e9e9;
     background: url("/images/user-img-background.jpg") no-repeat no-repeat;
-    height: 230px; 
-    top:20px;}
+    height: 185px; 
+    top:25px;}
     .sidebar .user-info .image {
       margin-right: 12px;
       display: inline-block; }
@@ -7533,7 +7533,7 @@ fieldset[disabled] .form-control {
       cursor: default;
       display: block;
       position: relative;
-      top: 140px; 
+      top: 70px; 
       left: 5px;}
       .sidebar .user-info .info-container .name {
         white-space: nowrap;
@@ -7545,6 +7545,7 @@ fieldset[disabled] .form-control {
         max-width: 200px;
         color: #000; }
       .sidebar .user-info .info-container .email {
+        padding: 20px, 20px, 20px ,30px;
         white-space: nowrap;
         -ms-text-overflow: ellipsis;
         -o-text-overflow: ellipsis;

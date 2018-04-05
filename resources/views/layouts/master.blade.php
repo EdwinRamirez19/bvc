@@ -48,40 +48,26 @@
     <div class="overlay"></div>
     <!-- #END# Overlay For Sidebars -->
 
-    @include('layouts.search')
-    
     @include('layouts.navbar')
-
+ 
     <section>
         <!-- Left Sidebar -->
         <aside id="leftsidebar" class="sidebar">
            <!-- User Info -->
             <div class="user-info">
-                    <div class="info-container">
-                       <!-- <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
-                        <div class="email"></div>-->
-                        <div class="btn-group user-helper-dropdown">
-                            <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">input</i>
-                            <ul class="dropdown-menu pull-right">
-                                <li role="seperator" class="divider"></li>
-                                <li>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                        <i class="material-icons">input</i> Salir</a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
+            </div>
+            
+            <div class="legal">
+                <div class="copyright">
+                            &copy; 2018 - 2019 <a href="javascript:void(0);">Admin - BVC Software</a>.
                 </div>
-
+                <div class="version">
+                            <b>Version: </b> 1.0
+                </div>
+            </div>
                 @include('layouts.menu')
         </aside>
     </section>
-
     <main>
         <section class="content">
             <div class="container-fluid">

@@ -26,6 +26,20 @@
                 <i class="material-icons">person</i>
                 <span>PROFESORES</span>
             </a>
-        </li>  
+        </li>
+        
+        <li>
+                <a href="{{ route('questions.index') }}">
+                    <i class="material-icons">more_vert</i>
+                    <span>ENCUESTA</span>
+                </a>
+        </li>
+
+        <li>
+                <a href="{{ route('events.index') }}">
+                    <i class="material-icons">favorite</i>
+                    <span>EVENTOS</span>
+                </a>
+        </li>
     </ul>
 </div>

@@ -21,7 +21,7 @@ class EventController extends Controller
     public function create(){
 
     	$event = null;
-    	return view('events.create');
+    	return view('events.create',compact('event'));
     }
 
     public function store(EventStoreRequest $request){
@@ -30,10 +30,10 @@ class EventController extends Controller
       return redirect()->route('events.index',compact('event'));
     }
     public function update(EventUpdateRequest $request,$id){
-
+       
        $event = Event::find($id);
        $event->update($request->all());
-       return view('events.index',compact('event'));
+       return redirect()->route('events.index');
 
     }
 

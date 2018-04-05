@@ -13,16 +13,40 @@
                                     <div class="input-group">
 
                                         <span class="input-group-addon">
+                                            <i class="material-icons">school</i>
+                                        </span>
+                                        <div class="form-line">
+                                            <select name="id_schools" id="id_schools" class="form-control">
+                                                <option>Instituciones</option>
+                                                @foreach($schools as $school)
+
+                                                <option value="{{$school['id']}}">
+                                                    
+                                                    {{$school['nombre_esc']}}
+                                                </option>
+                                                @endforeach
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+
+                                    <div class="input-group">
+
+                                        <span class="input-group-addon">
                                             <i class="material-icons">person</i>
                                         </span>
                                         <div class="form-line">
                                             <input type="text" value="{{ $student->nombres_est OR old('nombres_est') }}" class="form-control date" placeholder="Nombres" id="nombres_est" name="nombres_est">
                                             @foreach ($errors->get('nombres_est') as $message) 
-													<div class="note note-error">{{ $message }}</div>
-												@endforeach
+                                                    <div class="note note-error">{{ $message }}</div>
+                                                @endforeach
                                         </div>
                                     </div>
                                 </div>
+
 
                                 <div class="col-md-4">
 
@@ -100,14 +124,18 @@
                                             <i class="material-icons">verified_user</i>
                                         </span>
                                         <div class="form-line">
-                                            <input type="text" value="{{ $student->autizacion_uso_datos_personales_est OR old('autizacion_uso_datos_personales_est') }}"class="form-control date" placeholder="Autorizar"  id="autizacion_uso_datos_personales_est" name="autizacion_uso_datos_personales_est">
-                                            @foreach ($errors->get('autizacion_uso_datos_personales_est') as $message) 
-													<div class="note note-error">{{ $message }}</div>
-												@endforeach
+                                            <select name="autizacion_uso_datos_personales_est" id="autizacion_uso_datos_personales_est" class="form-control">
+                                                <option>Autorizar</option>
+                                                <option value="1">Si</option>
+                                                <option value="0">No</option>
+                                            </select>
+                                             @foreach ($errors->get('autizacion_uso_datos_personales_est') as $message) 
+                                                    <div class="note note-error">{{ $message }}</div>
+                                                @endforeach
                                         </div>
                                     </div>
                                 </div>
-
+                     
 
                             </div>
                             <footer>

@@ -61,7 +61,7 @@ class TeacherController extends Controller
 
    }
 
-   public function distroy($id){
+   public function destroy($id){
    	Teacher::find($id)->delete();
    	return back()->with('info','Docente Eliminado Con Exito');
    }

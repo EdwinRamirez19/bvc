@@ -24,14 +24,14 @@ class EventController extends Controller
 
    public function create(){
    
-   $events = null;
-   return view('events.create',compact('events'));
+   $event = null;
+   return view('events.create',compact('event'));
 
    }
 
-   public function store(EventsStoreRequest $request){
+   public function store(EventStoreRequest $request){
    
-   $events = Events::create($request->all());
+   $event = Event::create($request->all());
      
      return redirect()->route('events.index');
      
@@ -42,28 +42,28 @@ class EventController extends Controller
    public function show($id){
    
 
-   $events = Events::find($id);
+   $event = Event::find($id);
 
-   return view('events.show', compact('events'));
+   return view('events.show', compact('event'));
 
    }
 
    public function edit($id){
-    $events = Events::find($id);
-    return view('events.edit',compact('events'));
+    $event = Event::find($id);
+    return view('events.edit',compact('event'));
    }
 
-   public function update(EventsUpdateRequest $request, $id){
+   public function update(EventUpdateRequest $request, $id){
     
-    $events = Events::find($id);
-    $events->update($request->all());
+    $event = Event::find($id);
+    $event->update($request->all());
 
     return redirect()->route('events.index');
 
    }
 
-   public function distroy($id){
-    Events::find($id)->delete();
+   public function destroy($id){
+    Event::find($id)->delete();
     return back()->with('info','Evento Eliminado Con Exito');
    }
 }

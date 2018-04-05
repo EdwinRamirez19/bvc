@@ -27,5 +27,12 @@
                 <span>PROFESORES</span>
             </a>
         </li>  
+
+         <li>
+            <a href="{{ route('events.index') }}">
+                <i class="material-icons">business</i>
+                <span>EVENTOS</span>
+            </a>
+        </li>  
     </ul>
 </div>

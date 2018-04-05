@@ -16,7 +16,7 @@
                                         </span>
                                         <div class="form-line">
                                             <input type="text" value="{{ $event->nombre_even OR old('nombre_even') }}" class="form-control date" placeholder="Nombre" id="nombre_even" name="nombre_even">
-                                            @foreach ($errors->get('nombre_esc') as $message) 
+                                            @foreach ($errors->get('nombre_even') as $message) 
 													<div class="note note-error">{{ $message }}</div>
 												@endforeach
                                         </div>

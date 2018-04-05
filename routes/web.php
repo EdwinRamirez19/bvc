@@ -15,3 +15,6 @@ Route::resource('teachers',     'TeacherController');
 Route::resource('questions',    'QuestionController');
 
 
+
+
+Route::resource('events',     'EventController');

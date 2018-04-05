@@ -1,5 +1,5 @@
 
-@if(empty($school))
+@if(empty($event))
 <form method="POST" id="fx" action="{{ route('events.store') }}" class="smart-form">
 @else
 <form method="POST" id="fx" action="{{ route('events.update' , $event->id) }}" class="smart-form">

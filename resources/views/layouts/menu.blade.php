@@ -30,7 +30,7 @@
 
          <li>
             <a href="{{ route('events.index') }}">
-                <i class="material-icons">business</i>
+                <i class="material-icons">event</i>
                 <span>EVENTOS</span>
             </a>
         </li>  

@@ -48,7 +48,7 @@
                                         </span>
                                         <div class="form-line">
                                             <input type="text" value="{{ $school->ciudad_esc OR old('ciudad_esc') }}" class="form-control date" placeholder="Ciudad" id="ciudad_esc" name="ciudad_esc">
-                                            @foreach ($errors->get('nombre_esc') as $message) 
+                                            @foreach ($errors->get('ciudad_esc') as $message) 
                                                     <div class="note note-error">{{ $message }}</div>
                                                 @endforeach
                                         </div>

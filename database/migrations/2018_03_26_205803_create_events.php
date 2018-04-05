@@ -22,6 +22,8 @@ class CreateEvents extends Migration
             $table->string('organizador_even',20);
             $table->date('fecha_even');
             $table->time('hora_even');
+            $table->rememberToken();
+            $table->timestamps();
 
         });
     }

@@ -13,7 +13,7 @@
                                     <div class="input-group">
 
                                         <span class="input-group-addon">
-                                            <i class="material-icons">person</i>
+                                            <i class="material-icons">school</i>
                                         </span>
                                         <div class="form-line">
                                             <input type="text" value="{{ $school->nombre_esc OR old('nombre_esc') }}" class="form-control date" placeholder="Nombre" id="nombre_esc" name="nombre_esc">
@@ -29,7 +29,7 @@
                                     <div class="input-group">
 
                                         <span class="input-group-addon">
-                                            <i class="material-icons">person</i>
+                                            <i class="material-icons">description</i>
                                         </span>
                                         <div class="form-line">
                                             <input type="text" value="{{ $school->descripcion_esc OR old('descripcion_esc') }}" class="form-control date" placeholder="Descripcion" id="descripcion_esc" name="descripcion_esc">
@@ -44,7 +44,7 @@
                                     <div class="input-group">
 
                                         <span class="input-group-addon">
-                                            <i class="material-icons">person</i>
+                                            <i class="material-icons">place</i>
                                         </span>
                                         <div class="form-line">
                                             <input type="text" value="{{ $school->ciudad_esc OR old('ciudad_esc') }}" class="form-control date" placeholder="Ciudad" id="ciudad_esc" name="ciudad_esc">

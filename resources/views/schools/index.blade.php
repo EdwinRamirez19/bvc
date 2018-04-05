@@ -6,7 +6,7 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
          <div class="card">
              <div class="header">
-				<a href=" {{route ('schools.create') }}" class="btn  btn-info pull-right">Crear Escuela</a>
+				<a href=" {{route ('schools.create') }}" class="btn  btn-info pull-right">Crear Institucion</a>
                 <h2>
                  DATOS DE LA ESCUELA
                     <small>Lista de forma general los datos de la escuela</small>

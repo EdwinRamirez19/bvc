@@ -6,7 +6,7 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
          <div class="card">
              <div class="header">
-				<a href=" {{route ('events.create') }}" class="btn  btn-info pull-right">Crear Escuela</a>
+				<a href=" {{route ('events.create') }}" class="btn  btn-info pull-right">Crear Evento</a>
                 <h2>
                  DATOS DE LOS EVENTOS
                     <small>Lista de forma general de Eventos</small>

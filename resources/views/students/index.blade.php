@@ -23,6 +23,7 @@
                         <th>Nº Celular</th>
                         <th>Firma</th>
                         <th>Autorizar uso datos</th>
+                        <th>Institucion</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,6 +36,7 @@
                         <td>{{$student->celular_est}}</td>
                         <td>{{$student->firma_est}}</td>
                         <td>{{$student->autizacion_uso_datos_personales_est}}</td>
+                        <td>{{$student->id_schools}}</td>
                                         
                         <td width="10px">
                              <a href="{{ route('students.show', $student->id) }}" class="btn btn-sm btn-info">

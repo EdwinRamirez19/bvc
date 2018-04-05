@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Student;
+use App\School;
+use App\Inquest;
 use App\Http\Requests\StudentStoreRequest;
 use App\Http\Requests\StudentUpdateRequest;
 class StudentController extends Controller
@@ -25,7 +27,9 @@ class StudentController extends Controller
     public function create()
     {
         $student = null;
-        return view('students.create', compact('student'));
+        $schools = School::all();
+       //$inquests = Inquest::all();
+        return view('students.create', compact('student','schools'));
     }
 
     public function store(StudentStoreRequest $request)
@@ -46,8 +50,10 @@ class StudentController extends Controller
     public function edit($id)
     {
         $student = Student::find($id);
+        $schools = School::all();
+        //$inquests = Inquest::all();
 
-        return view('students.edit', compact('student'));
+        return view('students.edit', compact('student','schools'));
     }
 
    

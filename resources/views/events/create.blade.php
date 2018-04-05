@@ -6,7 +6,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Crear Eventos
+                                Crear Evento
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -26,5 +26,9 @@
                            
                             @include('events.form')
                         </div>
-@endsection
                     
+                    </div>
+                </div>
+</div>
+
+@endsection

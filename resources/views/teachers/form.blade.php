@@ -44,7 +44,7 @@
                                     <div class="input-group">
 
                                         <span class="input-group-addon">
-                                            <i class="material-icons">person</i>
+                                            <i class="material-icons">person_outline</i>
                                         </span>
                                         <div class="form-line">
                                             <input type="text" value="{{ $teacher->identificacion_prof OR old('identificacion_prof') }}" class="form-control date" placeholder="Identificacion" id="identificacion_prof" name="identificacion_prof">
@@ -60,7 +60,7 @@
                                     <div class="input-group">
 
                                         <span class="input-group-addon">
-                                            <i class="material-icons">person</i>
+                                            <i class="material-icons">phone</i>
                                         </span>
                                         <div class="form-line">
                                             <input type="text" value="{{ $teacher->celular_prof OR old('celular_prof') }}" class="form-control date" placeholder="Celular" id="celular_prof" name="celular_prof">
@@ -76,7 +76,7 @@
                                     <div class="input-group">
 
                                         <span class="input-group-addon">
-                                            <i class="material-icons">person</i>
+                                            <i class="material-icons">email</i>
                                         </span>
                                         <div class="form-line">
                                             <input type="text" value="{{ $teacher->correo_prof OR old('correo_prof') }}" class="form-control date" placeholder="Correo" id="correo_prof" name="correo_prof">

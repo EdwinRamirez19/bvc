@@ -26,6 +26,7 @@
                 <i class="material-icons">person</i>
                 <span>PROFESORES</span>
             </a>
+
         </li>
         
         <li>
@@ -41,5 +42,6 @@
                     <span>EVENTOS</span>
                 </a>
         </li>
+        </li>  
     </ul>
 </div>

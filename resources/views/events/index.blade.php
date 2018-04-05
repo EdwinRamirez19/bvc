@@ -8,8 +8,8 @@
              <div class="header">
 				<a href=" {{route ('events.create') }}" class="btn  btn-info pull-right">Crear Evento</a>
                 <h2>
-                 DATOS DEL EVENTO
-                    <small>Lista de forma general los datos del evento</small>
+                 DATOS DE LOS EVENTOS
+                    <small>Lista de forma general de Eventos</small>
                 </h2>
             </div>
 		 <div class="body table-responsive">
@@ -18,12 +18,13 @@
                      <tr>
                         <th width="10px">id</th>
                         <th>Nombre</th>
-                        <th>Lugar</th>
                         <th>Descripcion</th>
                         <th>Tipo</th>
                         <th>Organizador</th>
+                        <th>Lugar</th>
                         <th>Fecha</th>
                         <th>Hora</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -31,10 +32,10 @@
                     <tr>
                         <td>{{$event->id}}</td>
                         <td>{{$event->nombre_even}}</td>
-                        <td>{{$event->lugar_even}}</td>
                         <td>{{$event->descripcion_even}}</td>
                         <td>{{$event->tipo_even}}</td>
                         <td>{{$event->organizador_even}}</td>
+                        <td>{{$event->lugar_even}}</td>
                         <td>{{$event->fecha_even}}</td>
                         <td>{{$event->hora_even}}</td>
                         

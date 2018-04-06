@@ -91,7 +91,7 @@
     <div class="col-md-3">
             <div class="form-group">
                     <b>¿Como te Enteraste?</b>
-                    {{ Form::select('enterar', ['FACEBOOK', 'YOUTUBE', 'TWITTER', 'PAGINA WEB',]) }} 
+                    {{ Form::select('enterar', [null,'FACEBOOK', 'YOUTUBE', 'TWITTER', 'PAGINA WEB']) }} 
             </div> 
     </div>
    
@@ -105,7 +105,7 @@
     <div class="col-md-4">
             <div class="form-group">
                     <b>¿Quien te envio la imformacion?</b>
-                    {{ Form::select('informacion', ['BVC', 'PUNTO BVC', 'UNIVERSIDAD', 'AMIGO',]) }} 
+                    {{ Form::select('informacion', [null,'BVC', 'PUNTO BVC', 'UNIVERSIDAD', 'AMIGO',]) }} 
             </div> 
     </div>
     
@@ -133,7 +133,7 @@
     <div class="col-md-6">
             <div class="form-group">
                     ¿SI TE ENCUENTRAS TOMANDO UN CURSO DE LA BVC, DE <b>lunes a viernes</b>,en que horario te gustaria que se realizara el curso?
-                    {{ Form::select('hora', ['7 a 9am','8 a 10am','2 a 4pm', '4 a 6pm', '6 a 8pm','6 a 9pm','7 a 9pm']) }} 
+                    {{ Form::select('hora', [null,'7 a 9am','8 a 10am','2 a 4pm', '4 a 6pm', '6 a 8pm','6 a 9pm','7 a 9pm']) }} 
             </div> 
     </div>
 
@@ -147,7 +147,7 @@
     <div class="col-md-6">
             <div class="form-group">
                     <b>¿El fin de semana</b>,en que horario te gustaria que se realizara el curso?
-                    {{ Form::select('hora1', ['7 a 9am','7 a 10am','7 a 11am', '7 a 12am', '7am a 1pm','8 a 10am','8 a 11am','8 a 12am','8am a 1pm']) }} 
+                    {{ Form::select('hora1', [null,'7 a 9am','7 a 10am','7 a 11am', '7 a 12am', '7am a 1pm','8 a 10am','8 a 11am','8 a 12am','8am a 1pm']) }} 
             </div> 
     </div>
 

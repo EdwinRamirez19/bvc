@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event;
+use App\User;
 use App\Http\Requests\EventStoreRequest;
 use App\Http\Requests\EventUpdateRequest;
 class EventController extends Controller
@@ -52,6 +53,9 @@ class EventController extends Controller
     	Event::find($id)->delete();
     	return redirect()->route('events.index');
     }
+
+
+   
 
     
 

@@ -40,7 +40,7 @@
                         <td>{{$event->hora_even}}</td>
                         
                         <td width="10px">
-                             <a href="{{ route('events.edit', $event->id) }}" class="btn btn-sm btn-teal">
+                    <a href="{{ route('events.edit', $event->id) }}" class="btn btn-sm btn-teal">
                                  Editar
                             </a>
                         </td>

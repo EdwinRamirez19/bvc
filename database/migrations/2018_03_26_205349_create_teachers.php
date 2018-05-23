@@ -19,7 +19,7 @@ class CreateTeachers extends Migration
             $table->string('apellidos_prof',100);
             $table->string('identificacion_prof',20);
             $table->string('celular_prof',15);
-            $table->string('correo_prof',20);
+            $table->string('correo_prof',200);
             $table->timestamps();
 
         });

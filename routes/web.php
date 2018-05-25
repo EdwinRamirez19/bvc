@@ -1,11 +1,15 @@
 
 <?php
+ 
+Route::get('/', function () {
+    return view('welcome');
+});
 
-//Ruta Raiz
-Route::redirect('/','inicio');
 
-//Ruta de Logueo
+
 Auth::routes();
+
+
 
 //rutas Aplicacion
 Route::get('inicio',            'web\InicioController@inicio')->name('inicio');

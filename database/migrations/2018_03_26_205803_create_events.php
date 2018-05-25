@@ -17,7 +17,7 @@ class CreateEvents extends Migration
             $table->increments('id');
             $table->string('nombre_even',200);
             $table->string('lugar_even',150);
-            $table->string('descripcion_even',250);
+            $table->string('descripcion_even',2500);
             $table->string('tipo_even',15);
             $table->string('organizador_even',20);
             $table->date('fecha_even');

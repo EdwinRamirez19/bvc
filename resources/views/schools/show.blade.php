@@ -22,6 +22,7 @@
                         <th>Nombre</th>
                         <th>Descripcion</th>
                         <th>Ciudad</th>
+                        <th>Email</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,6 +32,7 @@
                         <td>{{$school->nombre_esc}}</td>
                         <td>{{$school->descripcion_esc}}</td>
                         <td>{{$school->ciudad_esc}}</td>
+                        <td>{{$school->email}}</td>
                         
                        
                         <td width="10px">

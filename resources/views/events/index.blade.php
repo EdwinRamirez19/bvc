@@ -56,6 +56,14 @@
                                         </button>                           
                                     {!! Form::close() !!}
                         </td>
+
+                         <td width="10px">
+                             <a href="{{ route('enviar-email' )}}" class="btn btn-sm btn-teal">
+                                invitar
+                            </a>
+                        </td>
+
+
                     </tr>
                     @endforeach
                     </tbody>

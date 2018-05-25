@@ -37,6 +37,7 @@
                         </div>
                     </div>
                 </form>
+                <a href="{{ url('/register') }}" class="text-center pull-right">Registrate!!</a><br><br><br>
             </div>
         </div>
 

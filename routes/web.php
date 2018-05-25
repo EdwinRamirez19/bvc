@@ -2,7 +2,7 @@
 <?php
 
 //Ruta Raiz
-Route::redirect('/','inicio');
+Route::redirect('/','welcome');
 
 //Ruta de Logueo
 Auth::routes();
@@ -96,7 +96,7 @@ Route::get('enviar-email', function(){
               ->middleware('permission:events.destroy');
 
         Route::post('events/{role}/edit','EventController@edit')->name('events.edit')
-              ->middleware('permission:events.edit');
+              ->middleware('permission:events.edit'); 
 
 
         //Users

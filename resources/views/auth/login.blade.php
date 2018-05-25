@@ -31,6 +31,7 @@
                             <input type="checkbox" name="remember" id="remember" class="filled-in chk-col-pink">
                             <label for="remember">Recordarme el Registro</label>
                         </div>
+                        <a href="{{ url('/register') }}" class="text-center pull-right">Registrate!!</a><br><br><br>
                         <div class="col-xs-4">
                             <button class="btn btn-block bg-pink waves-effect" type="submit">INGRESA</button>
                         </div>

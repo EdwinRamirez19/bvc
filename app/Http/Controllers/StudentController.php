@@ -60,10 +60,10 @@ class StudentController extends Controller
     public function update(StudentUpdateRequest $request, $id)
     {
         $student = Student::find($id);
-
+         $schools = School::all();
         $student->update($request->all());
 
-        return redirect()->route('students.index')->with('info','Estudiante Actualizado con éxito');
+        return redirect()->route('students.index',compact('student','schools'))->with('info','Estudiante Actualizado con éxito');
     }
 
     public function destroy($id)

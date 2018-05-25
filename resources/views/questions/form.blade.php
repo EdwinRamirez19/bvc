@@ -30,6 +30,8 @@
                     {{ Form::select('conf3', ['UNO' => '1', 'DOS' => '2', 'TRES' => '3', 'CUATRO' => '4','CINCO' => '5',]) }} 
             </div> 
     </div>
+
+    
      
     <div class="col-md-2">
             <p><b>->Tema:</b></p>           

@@ -50,11 +50,9 @@
                             </a>
                         </td>
                         <td width="10px">
-                            {!! Form::open(['route' => ['events.destroy', $event->id], 'method' => 'DELETE']) !!}
-                                        <button class="btn btn-sm btn-danger">
-                                            Eliminar
-                                        </button>                           
-                                    {!! Form::close() !!}
+                            {{ Form::open(['route' => ['events.destroy', $event->id], 'method' => 'delete']) }}
+                                {{ Form::submit('Eliminar', ['class' => 'btn btn-sm btn-danger']) }}
+                            {{ Form::close() }}
                         </td>
 
                          <td width="10px">

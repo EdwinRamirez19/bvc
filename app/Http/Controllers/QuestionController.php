@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Question;
+use App\Http\Requests\QuestionStoreRequest;
+use App\Http\Requests\QuestionUpdateRequest;
 
 class QuestionController extends Controller
 {
@@ -17,48 +19,48 @@ class QuestionController extends Controller
 
     public function create()
     {
-        $questions = null;
-        return view('questions.create', compact('questions'));
+        $question = null;
+        return view('questions.create', compact('question'));
     }
 
-    public function store(Request $request)
+    public function store(QuestionStoreRequest $request)
     {
-        $questions = Question::create($request->all());
+        $question = Question::create($request->all());
 
-        return redirect()->route('questions.index');
+        return redirect()->route('questions.index',compact('question'));
        
         
     }
 
-    public function show($id)
+    public function show(Question $question)
     {
-        $question = Question::find($id);
+        
 
         return view('questions.show', compact('question'));
         
     }
 
-    public function edit($id)
+    public function edit(Question $question)
     {
-        $question  = Question::find($id);
+       
     return view('questions.edit',compact('question'));
         
     }
 
-    public function update(Request $request, $id)
+    public function update(QuestionUpdateRequest $request, Question $question)
     {
-    $questions = Question::find($id);
-    $questions->update($request->all());
+   
+    $question->update($request->all());
 
     return redirect()->route('questions.index');
         
     }
 
   
-    public function destroy($id)
+    public function destroy(Question $question)
     {
-    Question::find($id)->delete();
-    return back()->with('info','Encuesta Eliminada Con Exito');
+       $question->delete();
+    return redirect()->route('questions.index');
         
     }
 }

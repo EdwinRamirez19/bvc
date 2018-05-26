@@ -32,37 +32,37 @@ class TeacherController extends Controller
    
    $teacher = Teacher::create($request->all());
      
-     return redirect()->route('teachers.index');
+     return redirect()->route('teachers.index', compact('teacher'));
      
 
 
    }
 
-   public function show($id){
+   public function show(Teacher $teacher){
    
 
-   $teacher = Teacher::find($id);
+   
 
    return view('teachers.show', compact('teacher'));
 
    }
 
-   public function edit($id){
-   	$teacher = Teacher::find($id);
+   public function edit(Teacher $teacher){
+   	
     return view('teachers.edit',compact('teacher'));
    }
 
-   public function update(TeacherUpdateRequest $request, $id){
+   public function update(TeacherUpdateRequest $request, Teacher $teacher){
     
-    $teacher = Teacher::find($id);
+    
     $teacher->update($request->all());
 
     return redirect()->route('teachers.index');
 
    }
 
-   public function destroy($id){
-   	Teacher::find($id)->delete();
-   	return back()->with('info','Docente Eliminado Con Exito');
+   public function destroy(Teacher $teacher){
+   	$teacher->delete();
+   	return redirect()->route('teachers.index');
    }
 }

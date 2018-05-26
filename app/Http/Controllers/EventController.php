@@ -30,27 +30,31 @@ class EventController extends Controller
       $event = Event::create($request->all());
       return redirect()->route('events.index',compact('event'));
     }
-    public function update(EventUpdateRequest $request,$id){
+
+    public function update(EventUpdateRequest $request, Event $event){
        
-       $event = Event::find($id);
+       //$event = Event::find($id);
        $event->update($request->all());
+
        return redirect()->route('events.index');
 
     }
 
 
-    public function edit($id){
-    	$event = Event::find($id);
+    public function edit(Event $event){
+    	
     	return view('events.edit',compact('event'));
     }
 
-    public function show($id){
-    	$event = Event::find($id);
+    public function show(Event $event){
+    	
     	return view('events.show',compact('event'));
     }
 
-    public function destroy($id){
-    	Event::find($id)->delete();
+    public function destroy(Event $event){
+
+    	$event->delete();
+
     	return redirect()->route('events.index');
     }
 

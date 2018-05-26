@@ -33,6 +33,8 @@ class StudentStoreRequest extends FormRequest
             'correo_est'=> 'required|max:120',
             'firma_est'=> 'required|max:50',
             'autizacion_uso_datos_personales_est'=> 'required',
+            'id_inquests' => 'required',
+            'autizacion_uso_datos_personales_est' => 'required'
         ];
     }
 }

@@ -12,7 +12,7 @@
                   @foreach($roles as $role)
                     <li>
                       <label>
-                        {{ Form::checkbox('roles[]', $role->id, null,['class' => 'with-gap', 'checked' => 'checked']) }}
+                        {{ Form::checkbox('roles[]', $role->id, null) }}
                         {{ $role->name }}
                         <em>({{ $role->description ?: 'sin descripcion' }})</em>
                         

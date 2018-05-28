@@ -17,7 +17,7 @@
                 <i class="material-icons">school</i>
             </span>
             <div class="form-line">
-                <select name="id_schools" id="id_schools" class="form-control" required>
+                <select name="id_schools" class="form-control" required>
                     <option>Instituciones</option>
 
                     @foreach($schools as $school)

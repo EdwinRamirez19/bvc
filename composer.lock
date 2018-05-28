@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d0f51f8240c602ced9834c2f28f03d2f",
+    "content-hash": "02f71bc2e8a5da851f762873197b389c",
     "packages": [
         {
             "name": "caffeinated/shinobi",
@@ -723,16 +723,16 @@
         },
         {
             "name": "laravelcollective/html",
-            "version": "v5.6.8",
+            "version": "v5.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LaravelCollective/html.git",
-                "reference": "42c0854e00d6bb3346883d122b444fbf15a13ecb"
+                "reference": "818efc2e160aa56e8475219faed24542e80ee25d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/42c0854e00d6bb3346883d122b444fbf15a13ecb",
-                "reference": "42c0854e00d6bb3346883d122b444fbf15a13ecb",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/818efc2e160aa56e8475219faed24542e80ee25d",
+                "reference": "818efc2e160aa56e8475219faed24542e80ee25d",
                 "shasum": ""
             },
             "require": {
@@ -746,7 +746,7 @@
             "require-dev": {
                 "illuminate/database": "5.6.*",
                 "mockery/mockery": "~1.0",
-                "phpunit/phpunit": "~7.1"
+                "phpunit/phpunit": "~5.4"
             },
             "type": "library",
             "extra": {
@@ -787,7 +787,7 @@
             ],
             "description": "HTML and Form Builders for the Laravel Framework",
             "homepage": "https://laravelcollective.com",
-            "time": "2018-05-10T17:15:15+00:00"
+            "time": "2018-02-08T18:38:44+00:00"
         },
         {
             "name": "league/flysystem",

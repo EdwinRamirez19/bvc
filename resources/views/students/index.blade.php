@@ -6,7 +6,10 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
          <div class="card">
              <div class="header">
-				<a href=" {{route ('students.create') }}" class="btn  btn-info pull-right">Crear Estudiante</a>
+                @can('students.create')
+
+				    <a href=" {{route ('students.create') }}" class="btn  btn-info pull-right">Crear Estudiante</a>
+                @endcan
                 <h2>
                  DATOS DEL ESTUDIANTE
                     <small>Lista de forma general los datos del estudiante</small>
@@ -39,21 +42,28 @@
                         <td>{{$student->id_schools}}</td>
                                         
                         <td width="10px">
-                             <a href="{{ route('students.show', $student->id) }}" class="btn btn-sm btn-info">
+                            @can('students.show')
+                                <a href="{{ route('students.show', $student->id) }}" class="btn btn-sm btn-info">
                                  Ver
-                            </a>
+                                </a>
+                            @endcan    
                         </td>
                         <td width="10px">
-                             <a href="{{ route('students.edit', $student->id) }}" class="btn btn-sm btn-teal">
+                            @can('students.edit')
+                                <a href="{{ route('students.edit', $student->id) }}" class="btn btn-sm btn-teal">
                                  Editar
-                            </a>
+                                 </a>
+                            @endcan
                         </td>
                         <td width="10px">
-                            {!! Form::open(['route' => ['students.destroy', $student->id], 'method' => 'DELETE']) !!}
+                            @can('students.destroy')
+
+                                {!! Form::open(['route' => ['students.destroy', $student->id], 'method' => 'DELETE']) !!}
                                         <button class="btn btn-sm btn-danger">
                                             Eliminar
                                         </button>                           
                                     {!! Form::close() !!}
+                            @endcan
                         </td>
                     </tr>
                     @endforeach

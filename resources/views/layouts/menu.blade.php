@@ -2,7 +2,7 @@
     <ul class="list">
         <li class="header">PANEL DE NAVEGACION</li>
         <li class="active">
-            <a href="#">
+            <a href="{{route('inicio')}}">
                 <i class="material-icons">home</i>
                 <span>INICIO</span>
             </a>

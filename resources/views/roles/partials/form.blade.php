@@ -11,19 +11,7 @@
 	    {{ Form::label('description', 'Descripción') }}
 	    {{ Form::textarea('description', null, ['class' => 'form-control']) }}
 		</div>
-			<hr>
-				<h3>Permiso especial</h3>
-				        <div>
- 							<label>{{ Form::radio('special', 'all-access') }} Acceso total
- 							</label>
- 						</div>
-
- 								<div>
- 									<label>{{ Form::radio('special', 'no-access') }} Ningún acceso
- 									</label>
-                         		 </div>
-
-		                         	<hr>
+		
                               			<h3>Lista de permisos</h3>
   									
 										@foreach($permissions as $permission)

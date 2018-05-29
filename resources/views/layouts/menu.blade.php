@@ -47,7 +47,7 @@
        @can('events.index')
         <li class="nav-item">
             <a class="nav-link"href="{{ route('events.index') }}">
-                <i class="material-icons">favorite</i>
+                <i class="material-icons">event</i>
                 <span>EVENTOS</span>
             </a>
         </li>

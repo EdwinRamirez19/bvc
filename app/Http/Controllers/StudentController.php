@@ -28,7 +28,7 @@ class StudentController extends Controller
     {
         $student = null;
         $schools = School::all();
-       //$inquests = Inquest::all();
+       
         return view('students.create', compact('student','schools'));
     }
 
@@ -36,41 +36,40 @@ class StudentController extends Controller
     {
         $student = Student::create($request->all());
 
-        return redirect()->route('students.index')
-            ->with('info','Estudiante Creado con Exito');
+        return redirect()->route('students.index', compact('student'));
     }
 
-    public function show($id)
+    public function show(Student $student)
     {
-        $student = Student::find($id);
-
+        
         return view('students.show', compact('student'));
     }
 
-    public function edit($id)
+    public function edit(Student $student)
     {
-        $student = Student::find($id);
+       
         $schools = School::all();
-        //$inquests = Inquest::all();
+       
 
         return view('students.edit', compact('student','schools'));
     }
 
    
-    public function update(StudentUpdateRequest $request, $id)
+    public function update(StudentUpdateRequest $request, Student $student)
     {
-        $student = Student::find($id);
+        
+        //$schools = School::all();
 
         $student->update($request->all());
 
-        return redirect()->route('students.index')->with('info','Estudiante Actualizado con éxito');
+        return redirect()->route('students.index');
     }
 
-    public function destroy($id)
+    public function destroy(Student $student)
     {
-        Student::find($id)->delete();
+        $student->delete();
 
-        return back()->with('info','Eliminado Correctamente');
+        return redirect()->route('students.index');
 
     }
 }

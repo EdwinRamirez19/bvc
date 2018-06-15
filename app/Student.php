@@ -7,11 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     protected $fillable = [
-      'id_inquests','id_schools',
+      'questions_id','schools_id',
       'nombres_est','apellidos_est',
       'identificacion_est','celular_est',
       'correo_est','firma_est',
       'autizacion_uso_datos_personales_est'
     ];
+
+    public function schools()
+    {
+        return $this->belongsTo(\App\School::class, 'schools_id', 'id');
+    }
     
+
+    public function questions(){
+    	 return $this->belongsTo(\App\Question::class, 'questions_id', 'id');
+    }
 }

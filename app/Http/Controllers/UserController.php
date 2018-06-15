@@ -3,82 +3,62 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Caffeinated\Shinobi\Models\Role;
+use App\User;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    public function __construct(){
+        $this->middleware('auth');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function index(){
+        
+        $users = User::latest()->paginate();
+        return view('users.index', compact('users'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+
+
+    public function update( Request $request, User $user){
+
+      //actualizar usuario
+       $user->update($request->all());
+       
+
+      // actualizar roles
+
+       $user->roles()->sync($request->get('roles'));
+       
+
+       return redirect()->route('users.index', $user->id);
+
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+
+    public function edit(User $user){
+
+        $roles = Role::get();
+        
+        return view('users.edit',compact('user','roles'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+    public function show(User $user){
+        
+        return view('users.show',compact('user'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+    public function destroy(User $user){
+
+        $user->delete();
+
+        return redirect()->route('users.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+
+   
+
+    
+
 }

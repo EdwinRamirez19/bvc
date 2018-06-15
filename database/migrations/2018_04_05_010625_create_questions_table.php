@@ -11,7 +11,8 @@ class CreateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');
-
+            $table->integer('students_id')->unsigned()->default(0);
+            $table->foreign('students_id')->references('id')->on('students');
             $table->enum('conf1', ['UNO','DOS','TRES','CUATRO','CINCO']);
             $table->enum('conf2', ['UNO','DOS','TRES','CUATRO','CINCO']);
             $table->enum('conf3', ['UNO','DOS','TRES','CUATRO','CINCO']);
@@ -33,6 +34,8 @@ class CreateQuestionsTable extends Migration
             $table->enum('hora1', ['7 a 9am','7 a 10am','7 a 11am', '7 a 12am', '7am a 1pm','8 a 10am','8 a 11am','8 a 12am','8am a 1pm','']);
             $table->string('temas',250)->nullable();
             $table->timestamps();
+
+            
         });
     }
 

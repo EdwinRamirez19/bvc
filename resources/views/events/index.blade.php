@@ -3,10 +3,13 @@
 @section('content')
 
 <div class="row clearfix">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="col-lg-14 col-md-14 col-sm-14 col-xs-14">
          <div class="card">
              <div class="header">
-				<a href=" {{route ('events.create') }}" class="btn  btn-info pull-right">Crear Evento</a>
+
+                @can('events.create')
+				    <a href=" {{route ('events.create') }}" class="btn  btn-info pull-right">Crear Evento</a>
+                @endcan
                 <h2>
                  DATOS DE LOS EVENTOS
                     <small>Lista de forma general de Eventos</small>
@@ -40,30 +43,52 @@
                         <td>{{$event->hora_even}}</td>
                         
                         <td width="10px">
-                             <a href="{{ route('events.show', $event->id) }}" class="btn btn-sm btn-primary">
+                            @can('events.show')
+                                 <a href="{{ route('events.show', $event->id) }}" class="btn btn-sm btn-primary">
                                  Ver
-                            </a>
+                                 </a>
+                             @endcan
                         </td>
                         <td width="10px">
-                             <a href="{{ route('events.edit', $event->id) }}" class="btn btn-sm btn-teal">
+                            @can('events.edit')
+                                <a href="{{ route('events.edit', $event->id) }}" class="btn btn-sm btn-teal">
                                  Editar
-                            </a>
+                            
+                                </a>
+                            @endcan
                         </td>
                         <td width="10px">
-                            {!! Form::open(['route' => ['events.destroy', $event->id], 'method' => 'DELETE']) !!}
-                                        <button class="btn btn-sm btn-danger">
-                                            Eliminar
-                                        </button>                           
-                                    {!! Form::close() !!}
-                        </td>
+                            @can('events.destroy')
+                                {{ Form::open(['route' => ['events.destroy', $event->id], 'method' => 'delete']) }}
+                                {{ Form::submit('Eliminar', ['class' => 'btn btn-sm btn-danger']) }}
+                            {{ Form::close() }}
 
-                         <td width="10px">
-                             <a href="{{ route('enviar-email' )}}" class="btn btn-sm btn-teal">
+                            @endcan
+                        </td>
+                        <div>
+                         <td width="10px">                               
+                          <a href="{{ route('enviar-email' )}}" class="btn btn-sm btn-teal">
                                 invitar
                             </a>
                         </td>
+                        </div>
 
-
+                           <div>
+                         <td width="10px">                               
+                          <a href="{{ route('listado',[$event->id] )}}" class="btn btn-sm btn-teal">
+                                Pdf
+                            </a>
+                        </td>
+                        </div>
+                          <div>
+                         <td width="10px">                               
+                          <a href="{{ route('excel',[$event->id , 'type' => 'xls'] )}}" class="btn btn-sm btn-teal">
+                                Excel
+                            </a>
+                            
+                        </td>
+                        </div>
+                        
                     </tr>
                     @endforeach
                     </tbody>

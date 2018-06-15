@@ -24,6 +24,7 @@ class CreateEvents extends Migration
             $table->time('hora_even');
             $table->rememberToken();
             $table->timestamps();
+            
 
         });
     }

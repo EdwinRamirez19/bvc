@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Teacher;
 use App\Http\Requests\TeacherStoreRequest;
 use App\Http\Requests\TeacherUpdateRequest;
+use App\School;
 class TeacherController extends Controller
 {
 
@@ -24,7 +25,8 @@ class TeacherController extends Controller
    public function create(){
    
    $teacher = null;
-   return view('teachers.create',compact('teacher'));
+   $schools = School::all();
+   return view('teachers.create',compact('teacher','schools'));
 
    }
 
@@ -32,37 +34,37 @@ class TeacherController extends Controller
    
    $teacher = Teacher::create($request->all());
      
-     return redirect()->route('teachers.index');
+     return redirect()->route('teachers.index', compact('teacher'));
      
 
 
    }
 
-   public function show($id){
+   public function show(Teacher $teacher){
    
 
-   $teacher = Teacher::find($id);
+   
 
    return view('teachers.show', compact('teacher'));
 
    }
 
-   public function edit($id){
-   	$teacher = Teacher::find($id);
-    return view('teachers.edit',compact('teacher'));
+   public function edit(Teacher $teacher){
+   	 $schools = School::all();
+    return view('teachers.edit',compact('teacher','schools'));
    }
 
-   public function update(TeacherUpdateRequest $request, $id){
+   public function update(TeacherUpdateRequest $request, Teacher $teacher){
     
-    $teacher = Teacher::find($id);
+    
     $teacher->update($request->all());
 
     return redirect()->route('teachers.index');
 
    }
 
-   public function destroy($id){
-   	Teacher::find($id)->delete();
-   	return back()->with('info','Docente Eliminado Con Exito');
+   public function destroy(Teacher $teacher){
+   	$teacher->delete();
+   	return redirect()->route('teachers.index');
    }
 }

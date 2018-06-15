@@ -2,6 +2,30 @@
 <form method="POST" id="fx" action="{{ route('questions.store') }}" class="smart-form">
 
 {{ csrf_field() }}
+
+
+    <div class="col-md-4">
+
+        <div class="input-group">
+
+            <span class="input-group-addon">
+                <i class="material-icons">person</i>
+            </span>
+            <div class="form-line">
+                <select name="students_id" class="form-control" required>
+                    <option>Nombre Estudiante</option>
+
+                    @foreach($students as $student)
+                    <option value="{{$student['id']}}">
+                        {{$student['nombres_est']}}
+                        {{$student['apellidos_est']}}
+                    </option>
+                    @endforeach
+
+                </select>
+            </div>
+        </div>
+    </div>
     <div class="row clearfix">
             <div class="col-md-12"><center><p><b>DEL 1(peor) a 5(mejor) Califica el Evento</b></p></center><hr>
             </div>
@@ -30,6 +54,8 @@
                     {{ Form::select('conf3', ['UNO' => '1', 'DOS' => '2', 'TRES' => '3', 'CUATRO' => '4','CINCO' => '5',]) }} 
             </div> 
     </div>
+
+    
      
     <div class="col-md-2">
             <p><b>->Tema:</b></p>           

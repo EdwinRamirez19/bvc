@@ -16,6 +16,13 @@
             </a>
         </li>
         @endcan
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('events_schools.index') }}">
+                <i class="material-icons">person_outline</i>
+                <span>ASOCIAR EVENTOS</span>
+            </a>
+        </li>
         
         @can('schools.index')
         <li class="nav-item">

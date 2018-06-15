@@ -28,7 +28,7 @@ class PermissionsTableSeeder extends Seeder
 
 
         Permission::create([
-        	'name'        => 'Edicion de roles',
+        	'name'        => 'Edicion de usuario',
         	'slug'        => 'users.edit',
         	'description' =>'Editar cualquier dato de un usuario del sistema',
         ]);
@@ -79,34 +79,34 @@ class PermissionsTableSeeder extends Seeder
         //events
 
         Permission::create([
-        	'name'        => 'Navegar usuario events',
+        	'name'        => 'Navegar usuario eventos',
         	'slug'        => 'events.index',
-        	'description' => 'Lista y navega todos los events del sistema',
+        	'description' => 'Lista y navega todos los eventos del sistema',
         ]);
 
         Permission::create([
-        	'name'        => 'ver detalle de event',
+        	'name'        => 'ver detalle de evento',
         	'slug'        => 'events.show',
-        	'description' => 'ver en detalle aca rol del sistema',
+        	'description' => 'ver en detalle aca evento del sistema',
         ]);
 
 
         Permission::create([
-        	'name'        => 'Creacion de events',
+        	'name'        => 'Creacion de eventos',
         	'slug'        => 'events.create',
-        	'description' =>'Editar cualquier dato de un event del sistema',
+        	'description' =>'Crear cualquier dato de un evento del sistema',
         ]);
 
 
         Permission::create([
-        	'name'        => 'Edicion de events',
+        	'name'        => 'Edicion de eventos',
         	'slug'        => 'events.edit',
-        	'description' => 'Editar cualquier dato de un event del sistema',
+        	'description' => 'Editar cualquier dato de un evento del sistema',
         ]);
         Permission::create([
         	'name'        => 'Eliminar event',
         	'slug'        => 'events.destroy',
-        	'description' => 'Eliminar cualquier event del sistema',
+        	'description' => 'Eliminar cualquier evento del sistema',
         ]);
 
 
@@ -115,34 +115,34 @@ class PermissionsTableSeeder extends Seeder
         //questions
 
         Permission::create([
-            'name'        => 'Navegar usuario questions',
+            'name'        => 'Navegar usuario encuentas',
             'slug'        => 'questions.index',
-            'description' =>'Lista y navega todos los questions del sistema',
+            'description' =>'Lista y navega todos las encuentas del sistema',
         ]);
 
         Permission::create([
-            'name'        => 'ver detalle de question',
+            'name'        => 'ver detalle de encuenta',
             'slug'        => 'questions.show',
-            'description' =>'ver en detalle aca rol del sistema',
+            'description' =>'ver en detalle aca la encuenta del sistema',
         ]);
 
 
         Permission::create([
-            'name'        => 'Creacion de questions',
+            'name'        => 'Creacion de encuestas',
             'slug'        => 'questions.create',
-            'description' =>'Editar cualquier dato de un question del sistema',
+            'description' =>'Crear cualquier dato de una encuesta del sistema',
         ]);
 
 
         Permission::create([
-            'name'        => 'Edicion de questions',
+            'name'        => 'Edicion de encuesta',
             'slug'        => 'questions.edit',
-            'description' =>'Editar cualquier dato de un question del sistema',
+            'description' =>'Editar cualquier dato de una encuesta del sistema',
         ]);
         Permission::create([
-            'name'        => 'Eliminar question',
+            'name'        => 'Eliminar encuesta',
             'slug'        => 'questions.destroy',
-            'description' =>'Eliminar cualquier question del sistema',
+            'description' =>'Eliminar cualquier encuesta del sistema',
         ]);
 
 

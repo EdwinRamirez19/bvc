@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Teacher;
 use App\Http\Requests\TeacherStoreRequest;
 use App\Http\Requests\TeacherUpdateRequest;
+use App\School;
 class TeacherController extends Controller
 {
 
@@ -24,7 +25,8 @@ class TeacherController extends Controller
    public function create(){
    
    $teacher = null;
-   return view('teachers.create',compact('teacher'));
+   $schools = School::all();
+   return view('teachers.create',compact('teacher','schools'));
 
    }
 
@@ -48,8 +50,8 @@ class TeacherController extends Controller
    }
 
    public function edit(Teacher $teacher){
-   	
-    return view('teachers.edit',compact('teacher'));
+   	 $schools = School::all();
+    return view('teachers.edit',compact('teacher','schools'));
    }
 
    public function update(TeacherUpdateRequest $request, Teacher $teacher){

@@ -15,7 +15,7 @@ class CreateTeachers extends Migration
     {
         Schema::create('teachers', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('schools_id')->unsigned()->default(0);
+            $table->integer('schools_id')->unsigned();
             $table->string('nombres_prof',100);
             $table->string('apellidos_prof',100);
             $table->string('identificacion_prof',20);

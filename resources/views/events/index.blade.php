@@ -65,15 +65,30 @@
 
                             @endcan
                         </td>
-
-                         <td width="10px">
-
-                                <a href="{{ route('enviar-email' )}}" class="btn btn-sm btn-teal">
+                        <div>
+                         <td width="10px">                               
+                          <a href="{{ route('enviar-email' )}}" class="btn btn-sm btn-teal">
                                 invitar
                             </a>
                         </td>
+                        </div>
 
-
+                           <div>
+                         <td width="10px">                               
+                          <a href="{{ route('listado',[$event->id] )}}" class="btn btn-sm btn-teal">
+                                Pdf
+                            </a>
+                        </td>
+                        </div>
+                          <div>
+                         <td width="10px">                               
+                          <a href="{{ route('excel',[$event->id , 'type' => 'xls'] )}}" class="btn btn-sm btn-teal">
+                                Excel
+                            </a>
+                            
+                        </td>
+                        </div>
+                        
                     </tr>
                     @endforeach
                     </tbody>

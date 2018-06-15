@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Question;
+use App\Student;
 use App\Http\Requests\QuestionStoreRequest;
 use App\Http\Requests\QuestionUpdateRequest;
 
@@ -20,7 +21,8 @@ class QuestionController extends Controller
     public function create()
     {
         $question = null;
-        return view('questions.create', compact('question'));
+        $students = Student::all();
+        return view('questions.create', compact('question','students'));
     }
 
     public function store(QuestionStoreRequest $request)
@@ -42,8 +44,8 @@ class QuestionController extends Controller
 
     public function edit(Question $question)
     {
-       
-    return view('questions.edit',compact('question'));
+       $students = Student::all();
+    return view('questions.edit',compact('question','students'));
         
     }
 

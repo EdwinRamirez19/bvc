@@ -222,3 +222,14 @@ Route::get('enviar-email', function(){
               ->middleware('permission:users.edit');
 
    });
+
+
+Route::resource('events_schools','EventSchoolController');
+
+
+
+
+Route::get('Listado/reporte/{id_even}','ReporteController@reporte')->name('listado');
+Route::get('Listado/reporteExcel/{id_even}','ReporteController@reporteExcel')->name('excel');
+
+

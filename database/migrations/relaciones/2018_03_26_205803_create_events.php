@@ -15,6 +15,7 @@ class CreateEvents extends Migration
     {
          Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('schools_id')->unsigned();
             $table->string('nombre_even',200);
             $table->string('lugar_even',150);
             $table->string('descripcion_even',2500);
@@ -24,7 +25,7 @@ class CreateEvents extends Migration
             $table->time('hora_even');
             $table->rememberToken();
             $table->timestamps();
-            
+            $table->foreign('schools_id')->references('schools')->on('id');
 
         });
     }

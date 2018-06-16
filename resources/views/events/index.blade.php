@@ -19,7 +19,7 @@
             <table class="table">
                  <thead>
                      <tr>
-                        <th width="10px">id</th>
+                       
                         <th>Nombre</th>
                         <th>Descripcion</th>
                         <th>Tipo</th>
@@ -33,7 +33,7 @@
                 <tbody>
                 @foreach($events as $event)
                     <tr>
-                        <td>{{$event->id}}</td>
+                       
                         <td>{{$event->nombre_even}}</td>
                         <td>{{$event->descripcion_even}}</td>
                         <td>{{$event->tipo_even}}</td>
@@ -43,52 +43,55 @@
                         <td>{{$event->hora_even}}</td>
                         
                         <td width="10px">
-                            @can('events.show')
-                                 <a href="{{ route('events.show', $event->id) }}" class="btn btn-sm btn-primary">
-                                 Ver
-                                 </a>
-                             @endcan
+                            <div>
+                                @can('events.show')
+                                    <a href="{{ route('events.show', $event->id) }}" class="btn btn-sm btn-primary">
+                                    Ver
+                                    </a>
+                                    
+                                @endcan
+                            </div>
+                            <div>
+                                <br>
+                                <a href="{{ route('listado',[$event->id] )}}" class="btn btn-sm btn-info">
+                                    Pdf
+                                </a>
+                            </div>
                         </td>
                         <td width="10px">
+                            <div>
                             @can('events.edit')
                                 <a href="{{ route('events.edit', $event->id) }}" class="btn btn-sm btn-teal">
                                  Editar
                             
                                 </a>
                             @endcan
+                            </div>
+                            <div>
+                                <br>
+                                <a href="{{ route('excel',[$event->id , 'type' => 'xls'] )}}" class="btn btn-sm btn-teal">
+                                    Excel
+                                </a>
+                            <div>
                         </td>
                         <td width="10px">
+                            <div>
                             @can('events.destroy')
                                 {{ Form::open(['route' => ['events.destroy', $event->id], 'method' => 'delete']) }}
                                 {{ Form::submit('Eliminar', ['class' => 'btn btn-sm btn-danger']) }}
                             {{ Form::close() }}
 
                             @endcan
+                            </div>
+                            <div>
+                                <br>
+                                <a href="{{ route('enviar-email' )}}" class="btn btn-sm btn-danger" >
+                                    &nbsp Invitar  &nbsp
+                                </a>
+                            </div>
                         </td>
-                        <div>
-                         <td width="10px">                               
-                          <a href="{{ route('enviar-email' )}}" class="btn btn-sm btn-teal">
-                                invitar
-                            </a>
-                        </td>
-                        </div>
-
-                           <div>
-                         <td width="10px">                               
-                          <a href="{{ route('listado',[$event->id] )}}" class="btn btn-sm btn-teal">
-                                Pdf
-                            </a>
-                        </td>
-                        </div>
-                          <div>
-                         <td width="10px">                               
-                          <a href="{{ route('excel',[$event->id , 'type' => 'xls'] )}}" class="btn btn-sm btn-teal">
-                                Excel
-                            </a>
-                            
-                        </td>
-                        </div>
-                        
+                       
+                         
                     </tr>
                     @endforeach
                     </tbody>

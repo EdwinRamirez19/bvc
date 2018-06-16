@@ -45,7 +45,7 @@ class ReporteController extends Controller
                 
             $excel->sheet('FO_GPD_3203', function ($sheet) use ($id_even) {
             
-            $sheet->mergeCells('D1:G1');
+            $sheet->mergeCells('A1:D1');
             $sheet->row(1,['LISTADO DE ASISTENTES AL EVENTO']);
             $sheet->ROW(2,['NOMBRE EVENTO','LUGAR ','NOMBRES ESTUDIANTE','APELLIDOS ESTUDIANTE',
                            'CORREO','IDENTIFICACION','CELULAR','AUTORIZACION']);
@@ -72,7 +72,13 @@ class ReporteController extends Controller
                         $row[4] = $cons->correo_est;
                         $row[5] = $cons->identificacion_est;
                         $row[7] = $cons->celular_est;
-                        $row[8] = $cons->autizacion_uso_datos_personales_est;
+                        if($cons->autizacion_uso_datos_personales_est ==1){
+
+                            $row[8] ='Si';
+                        }else{
+                            $row[8] ='No';
+                        }
+                        
 
                         $sheet->appendRow($row);
 
@@ -81,9 +87,11 @@ class ReporteController extends Controller
             
         });
                 
-        })->export('XLS');
+        })->export('XLSX');
 
     }
+
+    
 
 	
 

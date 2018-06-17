@@ -73,13 +73,10 @@ class ReporteController extends Controller
                         $row[5] = $cons->identificacion_est;
                         $row[7] = $cons->celular_est;
                         if($cons->autizacion_uso_datos_personales_est ==1){
-
                             $row[8] ='Si';
                         }else{
                             $row[8] ='No';
                         }
-                        
-
                         $sheet->appendRow($row);
 
             }

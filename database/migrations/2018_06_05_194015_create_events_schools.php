@@ -13,7 +13,7 @@ class CreateEventsSchools extends Migration
      */
     public function up()
     {
-        Schema::create('events_schools', function (Blueprint $table) {
+        Schema::create('event_schools', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('schools_id')->unsigned()->default(0);
             $table->integer('events_id')->unsigned()->default(0);

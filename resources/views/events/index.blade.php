@@ -46,16 +46,18 @@
                             <div>
                                 @can('events.show')
                                     <a href="{{ route('events.show', $event->id) }}" class="btn btn-sm btn-primary">
-                                    Ver
+                                    Ver Evento
                                     </a>
                                     
                                 @endcan
                             </div>
                             <div>
-                                <br>
-                                <a href="{{ route('listado',[$event->id] )}}" class="btn btn-sm btn-info">
-                                    Pdf
+
+                                  <br>
+                                <a href="{{ route('excel2',[$event->id , 'type' => 'xls'] )}}" class="btn btn-sm btn-primary">
+                                    Excel encuesta 
                                 </a>
+                               
                             </div>
                         </td>
                         <td width="10px">
@@ -72,7 +74,7 @@
                                 <a href="{{ route('excel',[$event->id , 'type' => 'xls'] )}}" class="btn btn-sm btn-teal">
                                     Excel
                                 </a>
-                            <div>
+                            </div>
                         </td>
                         <td width="10px">
                             <div>
@@ -90,8 +92,7 @@
                                 </a>
                             </div>
                         </td>
-                       
-                         
+    
                     </tr>
                     @endforeach
                     </tbody>

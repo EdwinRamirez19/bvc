@@ -232,4 +232,6 @@ Route::resource('events_schools','EventSchoolController');
 Route::get('Listado/reporte/{id_even}','ReporteController@reporte')->name('listado');
 Route::get('Listado/reporteExcel/{id_even}','ReporteController@reporteExcel')->name('excel');
 
+Route::get('Listado/reporteExcel2/{id_even}','ReporteController@reporteExcel2')->name('excel2');
+
 

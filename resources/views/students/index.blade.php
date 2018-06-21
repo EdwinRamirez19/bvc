@@ -39,7 +39,7 @@
                         <td>{{$student->celular_est}}</td>
                         <td>{{$student->firma_est}}</td>
                         <td>{{$student->autizacion_uso_datos_personales_est}}</td>
-                        <td>{{$student->id_schools}}</td>
+                        <td>{{$student->schools_id}}</td>
                                         
                         <td width="10px">
                             @can('students.show')

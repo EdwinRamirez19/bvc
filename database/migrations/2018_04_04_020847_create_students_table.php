@@ -24,6 +24,8 @@ class CreateStudentsTable extends Migration
             $table->string('correo_est',120);
             $table->string('firma_est',50);
             $table->boolean('autizacion_uso_datos_personales_est',null);
+
+
             $table->timestamps();
             
             

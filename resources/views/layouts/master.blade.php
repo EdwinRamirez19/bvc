@@ -79,10 +79,11 @@
         </section>
     </main>
 
-    <script src="{{ asset('js/app.js') }}"></script>    
+    <script src="{{ asset('js/app.js') }}"></script>  
     <script src="{{ asset('plugins/jquery-slimscroll/jquery.slimscroll.js') }}"></script>
     <script src="{{ asset('plugins/node-waves/waves.js') }}"></script>
     <script src="{{ asset('js/admin.js') }}"></script>    
+
 </body>
 
 </html>

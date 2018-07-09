@@ -14,9 +14,18 @@
                  DATOS DE LOS EVENTOS
                     <small>Lista de forma general de Eventos</small>
                 </h2>
-            </div>
+                <br>
+               
+                <div class="form-group form-float">
+                    <div class="form-line focused primary">
+                        <input class="form-control" id="search" type="text" placeholder="Search..">
+                    </div>
+                    </div>
+                </div>
+           
+            
 		 <div class="body table-responsive">
-            <table class="table">
+            <table class="table" id="table">
                  <thead>
                      <tr>
                        
@@ -102,4 +111,20 @@
 		</div>
 	</div>
 </div>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script>
+
+$(document).ready(function(){
+  $("#search").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#table tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+</script>
 @endsection

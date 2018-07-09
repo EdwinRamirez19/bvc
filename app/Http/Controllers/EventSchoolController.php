@@ -19,7 +19,7 @@ class EventSchoolController extends Controller
         
         $events_schools = EventSchool::latest()->paginate(3);
           
-          $datos = \DB::select("select schools.nombre_esc,                                  events.nombre_even,event_schools.id from 
+          $datos = \DB::select("select schools.nombre_esc,events.nombre_even,event_schools.id from 
                                schools, events, event_schools 
                                where schools.id = event_schools.schools_id 
                                and events.id = event_schools.events_id");
@@ -30,13 +30,14 @@ class EventSchoolController extends Controller
     }
 
     public function create(){
+
         $event_school = null;
     	$events = Event::all();
         $schools = School::all();
     	return view('events_schools.create',compact('events','schools','event_school'));
     }
 
-    public function store(EventSchoolStoreRequest $request){
+    public function store(Request $request){
 
       
       $event_school = EventSchool::create($request->all());
@@ -45,7 +46,7 @@ class EventSchoolController extends Controller
       return redirect()->route('events_schools.index',compact('event_school'));
     }
 
-    public function update(EventSchoolUpdateRequest $request, EventSchool $event_school){
+    public function update(Request $request, EventSchool $event_school){
        
        //$event = Event::find($id);
        $event_school->update($request->all());
@@ -58,8 +59,8 @@ class EventSchoolController extends Controller
     public function edit(EventSchool $event_school){
     	  $schools = School::all();
           $events = Event::all();
-
-          dd($event_school);
+       
+          
 
     	return view('events_schools.edit',compact('event_school','schools','events'));
     }

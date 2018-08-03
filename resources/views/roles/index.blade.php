@@ -1,26 +1,31 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Roles
+<div class="row clearfix">
+    <div class="col-lg-14 col-md-14 col-sm-14 col-xs-14">
+         <div class="card">
+             <div class="header">
+
+               
                     @can('roles.create')
                     <a href="{{ route('roles.create') }}" 
                     class="btn btn-sm btn-primary pull-right">
                         Crear
                     </a>
                     @endcan
-                </div>
-
-                <div class="panel-body">
-                    <table class="table table-striped table-hover">
+                <h2>
+                 Roles
+                    <small>Lista de forma general de los roles</small>
+                </h2>
+                <br>
+               
+                <div class="body table-responsive">
+                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
                                 <th width="10px">ID</th>
                                 <th>Nombre</th>
+                                <th>Opciones</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
@@ -61,8 +66,7 @@
                     </table>
                     {{ $roles->render() }}
                 </div>
-            </div>
-        </div>
-    </div>
+		</div>
+	</div>
 </div>
 @endsection

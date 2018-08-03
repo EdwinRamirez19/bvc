@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="row clearfix">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="col-lg-14 col-md-14 col-sm-14 col-xs-14">
          <div class="card">
              <div class="header">
                 @can('students.create')

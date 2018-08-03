@@ -19,10 +19,11 @@
             <table class="table">
                  <thead>
                      <tr>
-                        <th width="10px">id</th>
                         <th>Nombres</th>
                         <th>Apellidos</th>
+                        <th>Tipo Documento</th>
                         <th>Identificacion</th>
+                        <th>Sexo</th>
                         <th>Nº Celular</th>
                         <th>Firma</th>
                         <th>Autorizar uso datos</th>
@@ -32,10 +33,12 @@
                 <tbody>
                 @foreach($students as $student)
                     <tr>
-                        <td>{{$student->id}}</td>
+                        
                         <td>{{$student->nombres_est}}</td>
                         <td>{{$student->apellidos_est}}</td>
+                        <td>{{$student->tipoDocumento_est}}</td>
                         <td>{{$student->identificacion_est}}</td>
+                        <td>{{$student->sexo_est}}</td>
                         <td>{{$student->celular_est}}</td>
                         <td>{{$student->firma_est}}</td>
                         <td>{{$student->autizacion_uso_datos_personales_est}}</td>

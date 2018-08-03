@@ -66,6 +66,21 @@
                 <i class="material-icons">perm_identity</i>
             </span>
             <div class="form-line">
+                <select name="tipoDocumento_est" class="form-control" required>
+                    <option>Tipo de Documento</option>
+                    <option value="TI">Targeta de Identidad</option>
+                    <option value="CC">Cedula de Ciudadania</option>
+                    <option value="TP">Targeta de Pasaporte</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <i class="material-icons">perm_identity</i>
+            </span>
+            <div class="form-line">
                 <input type="text" value="{{ $student->identificacion_est OR old('identificacion_est') }}" class="form-control date" placeholder="Identificacion" id="identificacion_est" name="identificacion_est" >
                 @foreach ($errors->get('identificacion_est') as $message) 
 						<div class="note note-error">{{ $message }}</div>
@@ -73,7 +88,21 @@
             </div>
         </div>
     </div>
-
+    <div class="col-md-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <i class="material-icons">perm_identity</i>
+            </span>
+            <div class="form-line">
+                <select name="sexo_est" class="form-control" required>
+                    <option>Seleccione...</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Otro">Otro</option>
+                </select>
+            </div>
+        </div>
+    </div>
     <div class="col-md-4">
         <div class="input-group">
             <span class="input-group-addon">

@@ -226,6 +226,8 @@ Route::get('enviar-email', function(){
 
 Route::resource('events_schools','EventSchoolController');
 
+              
+
 
 
 

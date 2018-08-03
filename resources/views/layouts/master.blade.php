@@ -23,6 +23,7 @@
     <link href="{{ asset('plugins/morrisjs/morris.css') }}" rel="stylesheet" />
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="{{ asset('css/themes/all-themes.css') }}" rel="stylesheet" />
+    
 </head>
 
 <body class="theme-cyan">
@@ -64,6 +65,7 @@
                 <div class="version">
                             <b>Version: </b> 1.0
                 </div>
+                
             </div>
                 @include('layouts.menu')
         </aside>

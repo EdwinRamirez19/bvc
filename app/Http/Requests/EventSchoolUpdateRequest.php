@@ -24,8 +24,8 @@ class EventSchoolUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'schools_id' => 'required',
-            'evennts_id' => 'required',
+            //'schools_id' => 'required',
+            //'evennts_id' => 'required',
         ];
     }
 }

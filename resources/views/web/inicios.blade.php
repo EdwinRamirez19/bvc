@@ -98,16 +98,15 @@
     console.log(nameEntidades);
     console.log(cantidadesEst);
 
-    new Chart(document.getElementById("bar-chart"), {
+  new Chart(document.getElementById("bar-chart"), {
     type: 'bar',
     data: {
-    
       labels: nameEntidades,
       datasets: [
         {
-          label: "Total Estudiantes",
-          backgroundColor: [],
-          data: cantidadesEst,
+          label: "Population (millions)",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: cantidadesEst
         }
       ]
     },
@@ -115,11 +114,19 @@
       legend: { display: false },
       title: {
         display: true,
-        text: 'Visualizacion De Registros De Asistentes Por Institucion'
-      }
+        text: 'Predicted world population (millions) in 2050'
+      },
+      scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
     }
     
 });
+
 
    var opts = {
             angle: 0, // The span of the gauge arc

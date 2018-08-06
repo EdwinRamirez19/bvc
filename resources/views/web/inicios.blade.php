@@ -63,13 +63,6 @@
                 </div>
                 <!-- #END# Contextual Classes With Linked Items -->
             </div>
-
-    
-    
-       
-        
-
-   
     
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
@@ -84,47 +77,37 @@
         "schoolData": []
     }
 
-    @foreach($schools as $school)
-        schoolsStudents.schoolData.push({
-            'idScholl': "{{ $school->id }}", 
-            'name': "{{ $school->nombre_esc }}"
-        });
+    @foreach($consultas as $t)
+    schoolsStudents.schoolData.push({
+        'id': "{{ $t->id }}",
+        'name':"{{ $t->nombre_esc }}",
+        'cant': "{{ $t->cant }}"
+    });
     @endforeach
 
-    console.log(schoolsStudents)
+    console.log(schoolsStudents);
 
-    var graficaName = [];
+    var nameEntidades = [];
+    var cantidadesEst = [];
 
     for (var i = 0; i < schoolsStudents.schoolData.length; i++) {
-	    graficaName.push(schoolsStudents.schoolData[i].name)
+	    nameEntidades.push(schoolsStudents.schoolData[i].name)
+        cantidadesEst.push(schoolsStudents.schoolData[i].cant)
     }
 
-    console.log(graficaName);
-    var con = 0;
-
-    var studentY = [];
-
-    @foreach($students as $student)
-    for (var i = 0; i < schoolsStudents.schoolData.length; i++) {
-        if (schoolsStudents.schoolData[i].idScholl == "{{ $student->schools_id }}"){
-            con++;
-            studentY.push(con);
-        }
-    }
-    @endforeach
-
-    console.log(studentY);
+    console.log(nameEntidades);
+    console.log(cantidadesEst);
 
     new Chart(document.getElementById("bar-chart"), {
     type: 'bar',
     data: {
     
-      labels: graficaName,
+      labels: nameEntidades,
       datasets: [
         {
           label: "Total Estudiantes",
           backgroundColor: [],
-          data: [totalStudent, 50]
+          data: cantidadesEst,
         }
       ]
     },

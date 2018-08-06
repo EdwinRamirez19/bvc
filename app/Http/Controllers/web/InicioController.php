@@ -13,15 +13,12 @@ class InicioController extends Controller
         $students = Student::all();
         $schools = School::all();
         
-        
-        foreach($schools as $school){
-            $consultas = \DB::select("select * from students where schools_id = '$school->id'");
-        }
+        $consultas = \DB::table('students')
+        ->join("schools","schools.id","=","students.schools_id")
+        ->select('nombre_esc','schools.id',\DB::raw('count(*) as cant'))
+        ->groupBy('schools_id')
+        ->get();
 
-        
-       
-        
-       
         return view('web.inicios',compact('students','schools','consultas'));
     }
 }

@@ -91,6 +91,10 @@
     }
     console.log(nameEntidades);
     console.log(cantidadesEst);
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
   new Chart(document.getElementById("bar-chart"), {
     type: 'bar',
     data: {
@@ -119,6 +123,11 @@
     }
     
 });
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> master
    var opts = {
             angle: 0, // The span of the gauge arc
             lineWidth: 0.45, // The line thickness

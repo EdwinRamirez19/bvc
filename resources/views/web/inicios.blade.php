@@ -85,24 +85,40 @@
     console.log(schoolsStudents);
     var nameEntidades = [];
     var cantidadesEst = [];
+
+    // Funcion para los colores de las barras
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    var ArrayColor = [];
+
     for (var i = 0; i < schoolsStudents.schoolData.length; i++) {
 	    nameEntidades.push(schoolsStudents.schoolData[i].name)
         cantidadesEst.push(schoolsStudents.schoolData[i].cant)
+        ArrayColor.push(getRandomColor());
     }
     console.log(nameEntidades);
     console.log(cantidadesEst);
-<<<<<<< HEAD
-=======
+    console.log(ArrayColor);
 
->>>>>>> master
-  new Chart(document.getElementById("bar-chart"), {
+
+    
+
+
+    new Chart(document.getElementById("bar-chart"), {
     type: 'bar',
     data: {
       labels: nameEntidades,
       datasets: [
         {
           label: "Population (millions)",
-          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          backgroundColor: ArrayColor,
           data: cantidadesEst
         }
       ]
@@ -123,11 +139,8 @@
     }
     
 });
-<<<<<<< HEAD
-=======
 
 
->>>>>>> master
    var opts = {
             angle: 0, // The span of the gauge arc
             lineWidth: 0.45, // The line thickness

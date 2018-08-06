@@ -78,42 +78,53 @@
 
 
     <script type="text/javascript">
-       var totalStudent = "{{count($students)}}"
+    var totalStudent = "{{ count($students) }}";
 
-       var datos = [];
+    var schoolsStudents = {
+        "schoolData": []
+    }
 
-       @foreach($schools as $item)
+    @foreach($schools as $school)
+        schoolsStudents.schoolData.push({
+            'idScholl': "{{ $school->id }}", 
+            'name': "{{ $school->nombre_esc }}"
+        });
+    @endforeach
 
-            datos.push(
-                "{{$item->nombre_esc}}"
-            );
+    console.log(schoolsStudents)
 
-       @endforeach
+    var graficaName = [];
 
-       console.log(datos);
+    for (var i = 0; i < schoolsStudents.schoolData.length; i++) {
+	    graficaName.push(schoolsStudents.schoolData[i].name)
+    }
 
-       var consulta = {
-        student: [],
-        school: []
-       }
+    console.log(graficaName);
+    var con = 0;
 
-       @foreach($consultas as $con)
-            console.log("{{count($con)}}")
-       @endforeach
+    var studentY = [];
 
+    @foreach($students as $student)
+    for (var i = 0; i < schoolsStudents.schoolData.length; i++) {
+        if (schoolsStudents.schoolData[i].idScholl == "{{ $student->schools_id }}"){
+            con++;
+            studentY.push(con);
+        }
+    }
+    @endforeach
 
+    console.log(studentY);
 
-    
     new Chart(document.getElementById("bar-chart"), {
     type: 'bar',
     data: {
     
-      labels: datos,
+      labels: graficaName,
       datasets: [
         {
           label: "Total Estudiantes",
           backgroundColor: [],
-          data: [totalStudent,52,73,78,43,40,50,20]
+          data: [totalStudent, 50]
         }
       ]
     },

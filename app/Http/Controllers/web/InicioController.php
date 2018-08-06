@@ -12,15 +12,10 @@ class InicioController extends Controller
 
         $students = Student::all();
         $schools = School::all();
-
-        /*$consulta = Student::join("schools","schools.id","=","students.schools_id")
-        ->where("schools.id","=",$school->schools_id)
-        ->get();*/
         
         
         foreach($schools as $school){
             $consultas = \DB::select("select * from students where schools_id = '$school->id'");
-            dd($consultas);
         }
 
         

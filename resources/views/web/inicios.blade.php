@@ -1,120 +1,136 @@
 @extends('layouts.master')
 @section('content')
 
-    <div class="row clearfix">
-        <div class="col-lg-14 col-md-14 col-sm-14 col-xs-14">
+    <div class="row clearfix ">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
              <div class="card">
                  <div class="header">
                  </div>
                  <div class= "body">
+                 <canvas id="bar-chart" width="800" height="350"></canvas>
                  </div>
             </div>     
-        </div>    
+        </div>
+    
     </div>    
-    <div class="row clearfix">
 
-        <div class="container-fluid" align="center" id="ocultarTacometro">
-            <div class="row clearfix">
+    
+    
+    
+    <div class="row clearfix">
+                <!-- Contextal Classes -->
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                        Tacometro
-                        </div>
-                            <br>
-                            <div class="body">
-                                <div class="row">
-                                    <div class="col">
-                                        <h1 class="text-muted" id="percentageOne">0%</h1>
-                                        <canvas id="meterOne">
-                                        </canvas>
-                                    </div>
+                            
+                            <div class="info-box bg-cyan hover-expand-effect">
+                                <div class="icon">
+                                    <i class="material-icons">playlist_add_check</i>
                                 </div>
-                                <br><br>
+                                <div class="content">
+                                    <div class="text"id="percentageOne"></div>
+                                    <h2>
+                                        <small>Aqui puedes ver cuantos participantes se han registrado en el mes</small>
+                                    </h2>
+                                    
+                                </div>
                             </div>
+                           
                         </div>
-                    </div>        
-                </div>    
-            </div>    
-        </div>
-        <div class="container-fluid" align="center" id="ocultarTacometro">
-            <div class="row clearfix">
+                        <div class="body align-center">
+                            <canvas id="meterOne">
+                            </canvas>    
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Contextal Classes -->
+                <!-- Contextual Classes With Linked Items -->
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                        Tacometro
+                            <h2>
+                                Tacometro
+                                <small>Aqui puedes ver cuantos participantes se han registrado en el mes</small>
+                            </h2>
+                            
                         </div>
-                            <br>
-                            <div class="body">
-                                <div class="row">
-                                    <div class="col">
-                                        <h1 class="text-muted" id="percentageOne">0%</h1>
-                                        <canvas id="meterOne">
-                                        </canvas>
-                                    </div>
-                                </div>
-                                <br><br>
-                            </div>
+                        <div class="body align-center">
+                            <h1 class="text-muted" id="percentageOne">0%</h1>
+                            <canvas id="meterOne">
+                            </canvas>
                         </div>
-                    </div>        
-                </div>    
-            </div>    
-        </div>
-    </div>
+                    </div>
+                </div>
+                <!-- #END# Contextual Classes With Linked Items -->
+            </div>
+
+    
+    
+       
+        
+
    
     
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
 
 <script src="{{asset('js/gauge.min.js')}}"></script>
 
 
     <script type="text/javascript">
+       var totalStudent = "{{count($students)}}"
+
+       var datos = [];
+
+       @foreach($schools as $item)
+
+            datos.push(
+                "{{$item->nombre_esc}}"
+            );
+
+       @endforeach
+
+       console.log(datos);
+
+       var consulta = {
+        student: [],
+        school: []
+       }
+
+       @foreach($consultas as $con)
+            console.log("{{count($con)}}")
+       @endforeach
+
+
 
     
-
+    new Chart(document.getElementById("bar-chart"), {
+    type: 'bar',
+    data: {
     
-      
-        
-          
-           var totalStudent = "{{count($students)}}"
-          
-        
-        console.log(totalStudent);
-      
-      
-
-      
+      labels: datos,
+      datasets: [
+        {
+          label: "Total Estudiantes",
+          backgroundColor: [],
+          data: [totalStudent,52,73,78,43,40,50,20]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Visualizacion De Registros De Asistentes Por Institucion'
+      }
+    }
     
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawVisualization);
-
-      function drawVisualization() {
-        // Some raw data (not necessarily accurate)
-        var data = google.visualization.arrayToDataTable([
-         ['Month', 'Bolivia', 'Ecuador', 'Madagascar', 'Papua New Guinea', 'Rwanda', 'Average'],
-         ['Enero',  165,      938,         522,             998,           450,      614.6],
-         ['Febrero',  135,      1120,        599,             1268,          288,      682],
-         ['Marzo',  157,      1167,        587,             807,           397,      623],
-         ['Abril',  139,      1110,        615,             968,           215,      609.4],
-         ['Mayo',  136,      691,         629,             1026,          366,      569.6]
-      ]);
-
-    var options = {
-      title : 'Monthly Coffee Production by Country',
-      vAxis: {title: 'Cups'},
-      hAxis: {title: 'Month'},
-      seriesType: 'bars',
-      series: {5: {type: 'line'}}
-    };
-
-    var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
-    chart.draw(data, options);
-  }
-
+});
 
    var opts = {
             angle: 0, // The span of the gauge arc
             lineWidth: 0.45, // The line thickness
-            radiusScale: 1, // Relative radius
+            radiusScale: 1.1, // Relative radius
             pointer: {
                 length: 0.6, // // Relative to gauge radius
                 strokeWidth: 0.035, // The thickness
@@ -128,9 +144,9 @@
             generateGradient: true,
             highDpiSupport: true,     // High resolution support
             staticZones: [
-                { strokeStyle: "#BFFF00", min: 0, max: 20 }, // Red from 100 to 130
+                { strokeStyle: "#DF0101", min: 0, max: 20 }, // Red from 100 to 130
                 { strokeStyle: "#FFBF00", min: 20, max: 80 }, // Yellow
-                { strokeStyle: "#DF0101", min: 80, max: 100 }  // Red
+                { strokeStyle: "#BFFF00", min: 80, max: 100 }  // Red
             ],
             staticLabels: {
                 font: "10px sans-serif",  // Specifies font
@@ -157,7 +173,7 @@
         setInterval(function() {
             gaugeOne.set(totalStudent); // set actual value
             
-            var statusPerson = document.getElementById("percentageOne").innerHTML = "Estudiantes Registrados " + totalStudent;
+            var statusPerson = document.getElementById("percentageOne").innerHTML = "ESTUDIANTES REGISTRADOS " + totalStudent;
                 
         }, 1000);
 

@@ -72,11 +72,9 @@
 
     <script type="text/javascript">
     var totalStudent = "{{ count($students) }}";
-
     var schoolsStudents = {
         "schoolData": []
     }
-
     @foreach($consultas as $t)
     schoolsStudents.schoolData.push({
         'id': "{{ $t->id }}",
@@ -84,30 +82,24 @@
         'cant': "{{ $t->cant }}"
     });
     @endforeach
-
     console.log(schoolsStudents);
-
     var nameEntidades = [];
     var cantidadesEst = [];
-
     for (var i = 0; i < schoolsStudents.schoolData.length; i++) {
 	    nameEntidades.push(schoolsStudents.schoolData[i].name)
         cantidadesEst.push(schoolsStudents.schoolData[i].cant)
     }
-
     console.log(nameEntidades);
     console.log(cantidadesEst);
-
-    new Chart(document.getElementById("bar-chart"), {
+  new Chart(document.getElementById("bar-chart"), {
     type: 'bar',
     data: {
-    
       labels: nameEntidades,
       datasets: [
         {
-          label: "Total Estudiantes",
-          backgroundColor: [],
-          data: cantidadesEst,
+          label: "Population (millions)",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: cantidadesEst
         }
       ]
     },
@@ -115,12 +107,18 @@
       legend: { display: false },
       title: {
         display: true,
-        text: 'Visualizacion De Registros De Asistentes Por Institucion'
-      }
+        text: 'Predicted world population (millions) in 2050'
+      },
+      scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
     }
     
 });
-
    var opts = {
             angle: 0, // The span of the gauge arc
             lineWidth: 0.45, // The line thickness
@@ -149,19 +147,15 @@
                 fractionDigits: 0  // Optional: Numerical precision. 0=round off.
             }
         };
-
         var targetOne = document.getElementById('meterOne'); // your canvas element
         
         var gaugeOne = new Gauge(targetOne).setOptions(opts); // create sexy gauge!
         
-
         gaugeOne.maxValue = 100; // set max gauge value
         gaugeOne.setMinValue(0);  // Prefer setter over gauge.minValue = 0
         gaugeOne.animationSpeed = 32; // set animation speed (32 is default value)
         //gaugeOne.set(50); // set actual value
-
        
-
        
         //gaugeTwo.set(50); // set actual value
         setInterval(function() {
@@ -170,6 +164,5 @@
             var statusPerson = document.getElementById("percentageOne").innerHTML = "ESTUDIANTES REGISTRADOS " + totalStudent;
                 
         }, 1000);
-
     </script>
 @endsection

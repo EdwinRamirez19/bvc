@@ -103,13 +103,10 @@
         cantidadesEst.push(schoolsStudents.schoolData[i].cant)
         ArrayColor.push(getRandomColor());
     }
+    
     console.log(nameEntidades);
     console.log(cantidadesEst);
     console.log(ArrayColor);
-
-
-    
-
 
     new Chart(document.getElementById("bar-chart"), {
     type: 'bar',
@@ -176,10 +173,7 @@
         gaugeOne.maxValue = 100; // set max gauge value
         gaugeOne.setMinValue(0);  // Prefer setter over gauge.minValue = 0
         gaugeOne.animationSpeed = 32; // set animation speed (32 is default value)
-        //gaugeOne.set(50); // set actual value
-       
-       
-        //gaugeTwo.set(50); // set actual value
+        
         setInterval(function() {
             gaugeOne.set(totalStudent); // set actual value
             
